@@ -1,10 +1,11 @@
 ﻿#include <Windows.h>
 #include <string>
 #include <iostream>
+#include "BadLength.h"
 
 int function(std::string str, int forbidden_length) {
 	if (str.length() != forbidden_length) return str.length();
-	else throw "bad_length";
+	else throw BadLength{"Запретная длина строки"};
 }
 
 int main()
@@ -23,8 +24,8 @@ int main()
 			int length = function(str, forbidden_length);
 			std::cout << "Длина слова " << str << " равна " << length << "\n";
 		}
-		catch (const char* e) {
-			std::cout << "Вы ввели слово запретной длины! До свидания";
+		catch (BadLength &e) {
+			std::cout << "Вы ввели слово запретной длины!До свидания";
 			break;
 		}
 	}

@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BadLength.cpp" />
     <ClCompile Include="ht_8.1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BadLength.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
